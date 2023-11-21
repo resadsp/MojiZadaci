@@ -225,7 +225,7 @@ while j<=8:
     j = j+1
 
 
-"""XVII ZADATAK - Papir, kamen, makaze
+"""XVIII ZADATAK - Papir, kamen, makaze
 Igrate protiv kompjutera, pobednik je ko prvi stigne do 3 pobede.
 """
 import random
@@ -298,4 +298,21 @@ if ja_score>kompa_score:
 else:
      print("IZGUBILI STE, kompjuter je pobedio rezultatom {} naprema {}.".format(kompa_score,ja_score))
 
+
+"""XIX ZADATAK - Korisnik baca kocku. Kada padne sestica prekida bacanje kocke.
+Ispisati koliko je korisnik imao neuspelih pokusaja dok nije dobio broj sest."""
+import random
+moguci_dogadjaji = [1,2,3,4,5,6]
+rezultat = 0
+while True:
+    a = random.randint(0, 5)
+    dogadjaj = moguci_dogadjaji[a]
+    if dogadjaj != 6:
+     rezultat += 1
+    elif dogadjaj ==  6:
+        print("Osvojili ste sesticu")
+        print("Imali ste {} neuspesnih pokusaja".format(rezultat))
+        break
+    else:
+        print("Bacaj ponovo!!!")
 
