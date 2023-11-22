@@ -265,8 +265,7 @@ if odgovor.upper() == "DA":
 else:
     print("Vratite se kada budete spremni da se igramo!!!")
 
-#II NACIN - LAKSI SA MANJE KODA
-#papir, kamen, makaze:
+#II NACIN: papir, kamen, makaze
 import random
 dogadjaji = ["papir", "kamen", "makaze"]
 ja_score = 0
@@ -297,7 +296,36 @@ if ja_score>kompa_score:
     print("CESTITAM, pobedili ste rezultatom {} naprema {}.".format(ja_score,kompa_score))
 else:
      print("IZGUBILI STE, kompjuter je pobedio rezultatom {} naprema {}.".format(kompa_score,ja_score))
-
+     
+#III nacin: papir, kamen, makaze
+import random
+dogadjaji = ["papir", "kamen","makaze"]
+ja_rez = 0
+comp_rez = 0
+while True:
+    dogadjaj = random.choice(dogadjaji)
+    ja = input("Papir, kamen ili makaze: ").lower()
+    if ja not in dogadjaji:
+        print("Niste dobro uneli, unesite ponovo.")
+        continue
+    print("Kompjuter je izabrao:",dogadjaj)
+    if ja == dogadjaj:
+        print("Nereseno.")
+        continue
+    if ja == "papir" and dogadjaj == "kamen":
+        ja_rez += 1
+    elif ja == "kamen" and dogadjaj == "makaze":
+        ja +=1
+    elif ja == "makaze" and dogadjaj == "papir":
+        ja += 1
+    else:
+        comp_rez += 1
+    if ja_rez == 3 or comp_rez == 3:
+        break
+if ja_rez>comp_rez:
+    print("CESTITAMO. VI STE POBEDNIK. VI --> {}, KOMPJUTER --> {}".format(ja_rez,comp_rez))
+else:
+    print("IZGUBILI STE. KOMPJUTER --> {}, VI --> {}".format(comp_rez,ja_rez))
 
 """XIX ZADATAK - Korisnik baca kocku. Kada padne sestica prekida bacanje kocke.
 Ispisati koliko je korisnik imao neuspelih pokusaja dok nije dobio broj sest."""
@@ -314,5 +342,21 @@ while True:
         print("Imali ste {} neuspesnih pokusaja".format(rezultat))
         break
     else:
-        print("Bacaj ponovo!!!")
+        print("Bacaj ponovo!!!") #ovo se nikada nece ostvariti
+        
+#II nacin: bacnanje kocke
+import random
+moguci_dogadjaji = [1,2,3,4,5,6]
+br = 0
+while True:
+    dogadjaj = random.choice(moguci_dogadjaji)
+    if dogadjaj == 6:
+        print("PALA JE SESTICA.")
+        break
+    else:
+        br += 1
+print("IMALI SMO {} NEUSPELIH POKUSAJA".format(br))
+
+
+
 
